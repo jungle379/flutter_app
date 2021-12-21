@@ -93,7 +93,11 @@ class MainPage extends StatelessWidget {
               Text('Main'),
               RaisedButton(onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) {
                 return SubPage();
-              })), child: new Text('Subページへ'),)
+              })), child: new Text('Subページへ'),),
+              Text('Main1'),
+              RaisedButton(onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                return SubPage1();
+              })), child: new Text('Subページ1へ'),)
             ],
           ),
         ),
@@ -103,6 +107,27 @@ class MainPage extends StatelessWidget {
 }
 
 class SubPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text('Navigator'),
+      ),
+      body: new Container(
+        padding: new EdgeInsets.all(32.0),
+        child: new Center(
+          child: new Column(
+              children: <Widget> [
+                Text('Sub'),
+                RaisedButton(onPressed: () => Navigator.of(context).pop(), child: new Text('戻る')),
+              ]
+          ),
+        ),
+      ),
+    );
+  }
+}
+class SubPage1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
