@@ -32,7 +32,14 @@ class MainPage extends StatelessWidget {
               RaisedButton(onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) {
                 return SubPage1();
               })), child: new Text('Subページ1へ'),),
-              Text('hoge', style: TextStyle(fontWeight: FontWeight.bold,color: Colors.red)),
+              Container(
+                margin: EdgeInsets.all(32),
+                child:Text('hoge', style: TextStyle(fontWeight: FontWeight.bold,fontSize:32,color: Colors.red)),
+              ),
+              Container(
+                margin: EdgeInsets.all(24),
+                child: Text('fuga',style: TextStyle(fontSize: 32,color: Colors.lightBlue)),
+              )
             ],
           ),
         ),
@@ -49,7 +56,7 @@ class SubPage extends StatelessWidget {
         title: new Text('Navigator'),
       ),
       body: new Container(
-        color: Colors.blue,
+        color: Colors.lightBlue,
         padding: new EdgeInsets.all(32.0),
         child: new Center(
           child: new Column(
@@ -71,6 +78,7 @@ class SubPage1 extends StatelessWidget {
         title: new Text('Navigator'),
       ),
       body: new Container(
+        color: Colors.lightGreen,
         padding: new EdgeInsets.all(32.0),
         child: new Center(
           child: new Column(
