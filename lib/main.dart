@@ -31,9 +31,9 @@ class MainPage extends StatelessWidget {
               Text('Main1',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.purple,fontSize:20)),
               RaisedButton(onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) {
                 return SubPage1();
-              })), child: new Text('Subページ-1へ'),),
+              })), child: new Text('Subページ_1へ'),),
               Container(
-                margin: EdgeInsets.all(32),
+                margin: EdgeInsets.all(24),
                 child:Text('Test', style: TextStyle(fontWeight: FontWeight.bold,fontSize:32,color: Colors.red)),
               ),
               Container(
@@ -45,21 +45,27 @@ class MainPage extends StatelessWidget {
             children: <Widget>[
               Container(
                 height: 100,
-                width: 100,
+                width: 1000,
                 color: Colors.pink,
-                child: Text('Container 1'),
+                margin: EdgeInsets.fromLTRB(20,20,20,20),
+                padding: EdgeInsets.fromLTRB(0, 40, 0, 40),
+                child: Text('Container 1',style: TextStyle(color: Colors.black),),
               ),
               Container(
                 height: 100,
-                width: 100,
+                width: 1000,
                 color: Colors.cyan,
-                child: Text('Container 2'),
+                margin: EdgeInsets.fromLTRB(20,20,20,20),
+                padding: EdgeInsets.fromLTRB(0, 40, 0, 40),
+                child: Text('Container 2',style: TextStyle(color: Colors.green),),
               ),
               Container(
                 height: 100,
-                width: 100,
+                width: 1000,
                 color: Colors.green,
-                child: Text('Container 3'),
+                margin: EdgeInsets.fromLTRB(20,20,20,20),
+                padding: EdgeInsets.fromLTRB(0, 40, 0, 40),
+                child: Text('Container 3',style: TextStyle(color: Colors.pinkAccent),),
               ),
               Container(
         ),
