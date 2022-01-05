@@ -19,7 +19,7 @@ class MainPage extends StatelessWidget {
         title: new Text('Navigator'),
       ),
       body: new Container(
-        color: Colors.green,
+        color: Colors.grey,
         padding: new EdgeInsets.all(32.0),
         child: new Center(
           child: new Column(
@@ -31,15 +31,40 @@ class MainPage extends StatelessWidget {
               Text('Main1',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.purple,fontSize:20)),
               RaisedButton(onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) {
                 return SubPage1();
-              })), child: new Text('Subページ1へ'),),
+              })), child: new Text('Subページ-1へ'),),
               Container(
                 margin: EdgeInsets.all(32),
-                child:Text('hoge', style: TextStyle(fontWeight: FontWeight.bold,fontSize:32,color: Colors.red)),
+                child:Text('Test', style: TextStyle(fontWeight: FontWeight.bold,fontSize:32,color: Colors.red)),
               ),
               Container(
                 margin: EdgeInsets.all(24),
-                child: Text('fuga',style: TextStyle(fontSize: 32,color: Colors.lightBlue)),
-              )
+                child: Text('Test1',style: TextStyle(fontSize: 32,color: Colors.lightBlue)),
+              ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Container(
+                height: 100,
+                width: 100,
+                color: Colors.pink,
+                child: Text('Container 1'),
+              ),
+              Container(
+                height: 100,
+                width: 100,
+                color: Colors.cyan,
+                child: Text('Container 2'),
+              ),
+              Container(
+                height: 100,
+                width: 100,
+                color: Colors.green,
+                child: Text('Container 3'),
+              ),
+              Container(
+        ),
+        ],
+      ),
             ],
           ),
         ),
