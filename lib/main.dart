@@ -28,17 +28,17 @@ class MainPage extends StatelessWidget {
               RaisedButton(onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) {
                 return SubPage();
               })), child: new Text('Subページへ'),),
-              Text('Main1',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.purple,fontSize:20)),
+              Text('Main2',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.purple,fontSize:20)),
               RaisedButton(onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) {
                 return SubPage1();
-              })), child: new Text('Subページ_1へ'),),
+              })), child: new Text('Subページ_2へ'),),
               Container(
                 margin: EdgeInsets.all(24),
                 child:Text('Test', style: TextStyle(fontWeight: FontWeight.bold,fontSize:32,color: Colors.red)),
               ),
               Container(
                 margin: EdgeInsets.all(24),
-                child: Text('Test1',style: TextStyle(fontSize: 32,color: Colors.lightBlue)),
+                child: Text('Test2',style: TextStyle(fontSize: 32,color: Colors.lightBlue)),
               ),
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -57,7 +57,7 @@ class MainPage extends StatelessWidget {
                 color: Colors.cyan,
                 margin: EdgeInsets.fromLTRB(20,20,20,20),
                 padding: EdgeInsets.fromLTRB(0, 40, 0, 40),
-                child: Text('Container 2',style: TextStyle(color: Colors.green),),
+                child: Text('Container 2',style: TextStyle(color: Colors.yellow),),
               ),
               Container(
                 height: 100,
@@ -65,10 +65,8 @@ class MainPage extends StatelessWidget {
                 color: Colors.green,
                 margin: EdgeInsets.fromLTRB(20,20,20,20),
                 padding: EdgeInsets.fromLTRB(0, 40, 0, 40),
-                child: Text('Container 3',style: TextStyle(color: Colors.pinkAccent),),
+                child: Text('Container 3',style: TextStyle(color: Colors.red),),
               ),
-              Container(
-        ),
         ],
       ),
             ],
@@ -114,8 +112,36 @@ class SubPage1 extends StatelessWidget {
         child: new Center(
           child: new Column(
               children: <Widget> [
-                Text('Sub1'),
+                Text('Sub2'),
                 RaisedButton(onPressed: () => Navigator.of(context).pop(), child: new Text('トップへ戻る')),
+                Column(mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Container(
+                      height: 100,
+                      width: 1000,
+                      color: Colors.grey.shade200,
+                      margin: EdgeInsets.fromLTRB(20,20,20,20),
+                      padding: EdgeInsets.fromLTRB(0, 40, 0, 40),
+                      child: Text('Grey.shade200',style: TextStyle(color: Colors.black),),
+                    ),
+                    Container(
+                      height: 100,
+                      width: 1000,
+                      color: Colors.grey.shade500,
+                      margin: EdgeInsets.fromLTRB(20,20,20,20),
+                      padding: EdgeInsets.fromLTRB(0, 40, 0, 40),
+                      child: Text('Grey.shade500',style: TextStyle(color: Colors.yellow),),
+                    ),
+                    Container(
+                      height: 100,
+                      width: 1000,
+                      color: Colors.grey.shade800,
+                      margin: EdgeInsets.fromLTRB(20,20,20,20),
+                      padding: EdgeInsets.fromLTRB(0, 40, 0, 40),
+                      child: Text('Grey.shade800',style: TextStyle(color: Colors.red),),
+                    ),
+                  ],
+                ),
               ]
           ),
         ),
