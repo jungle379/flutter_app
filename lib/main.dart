@@ -1,126 +1,104 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
-// class MyApp extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       title: 'Stateful',
-//       home: Scaffold(
-//         appBar: AppBar(
-//           title: Text('Stateful'),
-//         ),
-//         body: Center(
-//           child: ClickGood(),
-//         ),
-//       ),
-//     );
-//   }
-// }
-//
-// class ClickGood extends StatefulWidget {
-//   @override
-//   _ClickGoodState createState() => _ClickGoodState();
-// }
-//
-// class _ClickGoodState extends State<ClickGood> {
-//   bool _active = false;
-//
-//   void _handleTap() {
-//     setState(() {
-//       _active = !_active;
-//     });
-//   }
-//
-//   Widget build(BuildContext context) {
-//     return GestureDetector(
-//         onTap: _handleTap,
-//         child: Container(
-//           child: Column(
-//               children: <Widget>[
-//                 Container(
-//                   child: Center(
-//                     child: new Icon(
-//                       Icons.thumb_up,
-//                       color: _active ? Colors.orange[700] : Colors.grey[500],
-//                       size: 100.0,
-//                     ),
-//                   ),
-//                   width: 200.0,
-//                   height: 200.0,
-//                 ),
-//                 Container(
-//                   child: Center(
-//                     child: Text(
-//                       _active ? 'Active' : 'Inactive',
-//                       style: TextStyle(fontSize: 32.0, color: Colors.white),
-//                     ),
-//                   ),
-//                   width: 200.0,
-//                   height: 50.0,
-//                   decoration: BoxDecoration(
-//                     color: _active ? Colors.orange[700] : Colors.grey[600],
-//                   ),
-//                 ),
-//               ]
-//           ),
-//         )
-//     );
-//   }
-// }
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  static const String _title = 'BottomNavBar Code Sample';
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: MainPage(),
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: _title,
+      home: MyStatefulWidget(),
     );
   }
 }
 
-class MainPage extends StatelessWidget {
+class MyStatefulWidget extends StatefulWidget {
+  const MyStatefulWidget({Key? key}) : super(key: key);
+
+  @override
+  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
+}
+
+class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('Navigator'),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('BottomNavigationBar Sample'),
       ),
-      body: new Container(
-        padding: new EdgeInsets.all(32.0),
-        child: new Center(
-          child: new Column(
-            children: <Widget>[
-              Text('Main'),
-              RaisedButton(onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-                return SubPage();
-              })), child: new Text('Subページへ'),)
-            ],
-          ),
+      body: Center(
+        child: Text(
+          "indexNum: $_selectedIndex",
+          style: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
         ),
       ),
-    );
-  }
-}
-
-class SubPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('Navigator'),
-      ),
-      body: new Container(
-        padding: new EdgeInsets.all(32.0),
-        child: new Center(
-          child: new Column(
-              children: <Widget> [
-                Text('Sub1'),
-                RaisedButton(onPressed: () => Navigator.of(context).pop(), child: new Text('戻る')),
-              ]
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.book),
+            activeIcon: Icon(Icons.book_online),
+            label: 'Book',
+            tooltip: "This is a Book Page",
+            backgroundColor: Colors.blue,
           ),
-        ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.business),
+            activeIcon: Icon(Icons.business_center),
+            label: 'Business',
+            tooltip: "This is a Business Page",
+            backgroundColor: Colors.green,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.school),
+            activeIcon: Icon(Icons.school_outlined),
+            label: 'School',
+            tooltip: "This is a School Page",
+            backgroundColor: Colors.purple,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            activeIcon: Icon(Icons.settings_accessibility),
+            label: 'Settings',
+            tooltip: "This is a Settings Page",
+            backgroundColor: Colors.pink,
+          ),
+        ],
+
+        type: BottomNavigationBarType.shifting,
+        // ここで色を設定していても、shiftingにしているので
+        // Itemの方のbackgroundColorが勝ちます。
+        backgroundColor: Colors.red,
+        enableFeedback: true,
+        // IconTheme系統の値が優先されます。
+        iconSize: 18,
+        // 横向きレイアウトは省略します。
+        // landscapeLayout: 省略
+        selectedFontSize: 20,
+        selectedIconTheme: const IconThemeData(size: 30, color: Colors.green),
+        selectedLabelStyle: const TextStyle(color: Colors.red),
+        // ちなみに、LabelStyleとItemColorの両方を選択した場合、ItemColorが勝ちます。
+        selectedItemColor: Colors.black,
+        unselectedFontSize: 15,
+        unselectedIconTheme: const IconThemeData(size: 25, color: Colors.white),
+        unselectedLabelStyle: const TextStyle(color: Colors.purple),
+        // IconTheme系統の値が優先されるのでこの値は適応されません。
+        unselectedItemColor: Colors.red,
       ),
     );
   }
 }
-
