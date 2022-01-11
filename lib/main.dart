@@ -36,47 +36,47 @@ class MainPage extends StatelessWidget {
               RaisedButton(onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) {
                 return SubPage1();
               })), child: new Text('Subページ_2へ'),),
-              Text('Bottombutton',style: TextStyle(fontWeight: FontWeight.bold,fontSize:20)),
+              Text('BottomButton',style: TextStyle(fontWeight: FontWeight.bold,fontSize:20)),
               RaisedButton(onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) {
                 return MyStatefulWidget();
               })), child: new Text('BottomButtonへ')),
-              Container(
-                margin: EdgeInsets.all(24),
-                child:Text('Test', style: TextStyle(fontWeight: FontWeight.bold,fontSize:32,color: Colors.red)),
+              // Container(
+              //   margin: EdgeInsets.all(24),
+              //   child:Text('Test', style: TextStyle(fontWeight: FontWeight.bold,fontSize:32,color: Colors.red)),
+              // ),
+              // Container(
+              //   margin: EdgeInsets.all(24),
+              //   child: Text('Test2',style: TextStyle(fontSize: 32,color: Colors.lightBlue)),
+              // ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  Container(
+                    height: 100,
+                    width: 1000,
+                    color: Colors.pink,
+                    margin: EdgeInsets.fromLTRB(20,20,20,20),
+                    padding: EdgeInsets.fromLTRB(0, 40, 0, 40),
+                    child: Text('Container 1',style: TextStyle(color: Colors.black),),
+                  ),
+                  Container(
+                    height: 100,
+                    width: 1000,
+                    color: Colors.cyan,
+                    margin: EdgeInsets.fromLTRB(20,20,20,20),
+                    padding: EdgeInsets.fromLTRB(0, 40, 0, 40),
+                    child: Text('Container 2',style: TextStyle(color: Colors.yellow),),
+                  ),
+                  Container(
+                    height: 100,
+                    width: 1000,
+                    color: Colors.green,
+                    margin: EdgeInsets.fromLTRB(20,20,20,20),
+                    padding: EdgeInsets.fromLTRB(0, 40, 0, 40),
+                    child: Text('Container 3',style: TextStyle(color: Colors.red),),
+                  ),
+                ],
               ),
-              Container(
-                margin: EdgeInsets.all(24),
-                child: Text('Test2',style: TextStyle(fontSize: 32,color: Colors.lightBlue)),
-              ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              Container(
-                height: 100,
-                width: 1000,
-                color: Colors.pink,
-                margin: EdgeInsets.fromLTRB(20,20,20,20),
-                padding: EdgeInsets.fromLTRB(0, 40, 0, 40),
-                child: Text('Container 1',style: TextStyle(color: Colors.black),),
-              ),
-              Container(
-                height: 100,
-                width: 1000,
-                color: Colors.cyan,
-                margin: EdgeInsets.fromLTRB(20,20,20,20),
-                padding: EdgeInsets.fromLTRB(0, 40, 0, 40),
-                child: Text('Container 2',style: TextStyle(color: Colors.yellow),),
-              ),
-              Container(
-                height: 100,
-                width: 1000,
-                color: Colors.green,
-                margin: EdgeInsets.fromLTRB(20,20,20,20),
-                padding: EdgeInsets.fromLTRB(0, 40, 0, 40),
-                child: Text('Container 3',style: TextStyle(color: Colors.red),),
-              ),
-        ],
-      ),
             ],
           ),
         ),
@@ -174,72 +174,72 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     });
   }
 
-@override
-Widget build(BuildContext context) {
-  return Scaffold(
-    appBar: AppBar(
-      title: const Text('BottomNavigationBar Sample'),
-    ),
-    body: Center(
-      child: Text(
-        "indexNum: $_selectedIndex",
-        style: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('BottomNavigationBar Sample'),
       ),
-    ),
-    bottomNavigationBar: BottomNavigationBar(
-      currentIndex: _selectedIndex,
-      onTap: _onItemTapped,
-      items: const <BottomNavigationBarItem>[
-        BottomNavigationBarItem(
-          icon: Icon(Icons.book),
-          activeIcon: Icon(Icons.book_online),
-          label: 'Book',
-          tooltip: "This is a Book Page",
-          backgroundColor: Colors.blue,
+      body: Center(
+        child: Text(
+          "indexNum: $_selectedIndex",
+          style: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
         ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.business),
-          activeIcon: Icon(Icons.business_center),
-          label: 'Business',
-          tooltip: "This is a Business Page",
-          backgroundColor: Colors.green,
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.school),
-          activeIcon: Icon(Icons.school_outlined),
-          label: 'School',
-          tooltip: "This is a School Page",
-          backgroundColor: Colors.purple,
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.settings),
-          activeIcon: Icon(Icons.settings_accessibility),
-          label: 'Settings',
-          tooltip: "This is a Settings Page",
-          backgroundColor: Colors.pink,
-        ),
-      ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.book),
+            activeIcon: Icon(Icons.book_online),
+            label: 'Book',
+            tooltip: "This is a Book Page",
+            backgroundColor: Colors.blue,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.business),
+            activeIcon: Icon(Icons.business_center),
+            label: 'Business',
+            tooltip: "This is a Business Page",
+            backgroundColor: Colors.green,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.school),
+            activeIcon: Icon(Icons.school_outlined),
+            label: 'School',
+            tooltip: "This is a School Page",
+            backgroundColor: Colors.purple,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            activeIcon: Icon(Icons.settings_accessibility),
+            label: 'Settings',
+            tooltip: "This is a Settings Page",
+            backgroundColor: Colors.pink,
+          ),
+        ],
 
-      type: BottomNavigationBarType.shifting,
-      // ここで色を設定していても、shiftingにしているので
-      // Itemの方のbackgroundColorが勝ちます。
-      backgroundColor: Colors.red,
-      enableFeedback: true,
-      // IconTheme系統の値が優先されます。
-      iconSize: 18,
-      // 横向きレイアウトは省略します。
-      // landscapeLayout: 省略
-      selectedFontSize: 20,
-      selectedIconTheme: const IconThemeData(size: 30, color: Colors.green),
-      selectedLabelStyle: const TextStyle(color: Colors.red),
-      // ちなみに、LabelStyleとItemColorの両方を選択した場合、ItemColorが勝ちます。
-      selectedItemColor: Colors.black,
-      unselectedFontSize: 15,
-      unselectedIconTheme: const IconThemeData(size: 25, color: Colors.white),
-      unselectedLabelStyle: const TextStyle(color: Colors.purple),
-      // IconTheme系統の値が優先されるのでこの値は適応されません。
-      unselectedItemColor: Colors.red,
-    ),
-  );
-}
+        type: BottomNavigationBarType.shifting,
+        // ここで色を設定していても、shiftingにしているので
+        // Itemの方のbackgroundColorが勝ちます。
+        backgroundColor: Colors.red,
+        enableFeedback: true,
+        // IconTheme系統の値が優先されます。
+        iconSize: 18,
+        // 横向きレイアウトは省略します。
+        // landscapeLayout: 省略
+        selectedFontSize: 20,
+        selectedIconTheme: const IconThemeData(size: 30, color: Colors.green),
+        selectedLabelStyle: const TextStyle(color: Colors.red),
+        // ちなみに、LabelStyleとItemColorの両方を選択した場合、ItemColorが勝ちます。
+        selectedItemColor: Colors.black,
+        unselectedFontSize: 15,
+        unselectedIconTheme: const IconThemeData(size: 25, color: Colors.white),
+        unselectedLabelStyle: const TextStyle(color: Colors.purple),
+        // IconTheme系統の値が優先されるのでこの値は適応されません。
+        unselectedItemColor: Colors.red,
+      ),
+    );
+  }
 }
