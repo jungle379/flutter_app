@@ -49,15 +49,21 @@ class MainPage extends StatelessWidget {
               //   child: Text('Test2',style: TextStyle(fontSize: 32,color: Colors.lightBlue)),
               // ),
               Column(
-                mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   Container(
                     height: 100,
                     width: 1000,
-                    color: Colors.pink,
+                    // color: Colors.pink,
                     margin: EdgeInsets.fromLTRB(20,20,20,20),
                     padding: EdgeInsets.fromLTRB(0, 40, 0, 40),
-                    child: Text('Container 1',style: TextStyle(color: Colors.black),),
+                    child: Row (
+                    children: <Widget> [
+                      Container(color: Colors.red, child: Text('first')),
+                      Container(color: Colors.blue, child: Text('second')),
+                      Container(color: Colors.green, child: Text('third')),
+                      ],
+                    ),
+                    // child: Text('Container 1',style: TextStyle(color: Colors.black),),
                   ),
                   Container(
                     height: 100,
