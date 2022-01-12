@@ -23,7 +23,7 @@ class MainPage extends StatelessWidget {
         title: new Text('Navigator'),
       ),
       body: new Container(
-        color: Colors.grey,
+        color: Colors.white,
         padding: new EdgeInsets.all(32.0),
         child: new Center(
           child: new Column(
