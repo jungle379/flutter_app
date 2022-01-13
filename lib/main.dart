@@ -5,17 +5,19 @@ void main() => runApp(const MyApp());
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  static const String _title = 'BottomNavBar Code Sample';
+  // static const String _title = 'BottomNavBar Code Sample';
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: MainPage(),
     );
   }
 }
 
 class MainPage extends StatelessWidget {
+  const MainPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,20 +26,20 @@ class MainPage extends StatelessWidget {
       ),
       body: Container(
         color: Colors.grey,
-        padding: EdgeInsets.all(32.0),
+        padding: const EdgeInsets.all(32.0),
         child: Center(
           child: Column(
             children: <Widget>[
               const Text('Main',style: TextStyle(fontWeight: FontWeight.bold,fontSize:20)),
-              RaisedButton(onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-                return SubPage();
+              ElevatedButton(onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                return const SubPage();
               })), child: const Text('Subページへ'),),
               const Text('Main2',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.purple,fontSize:20)),
-              RaisedButton(onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-                return SubPage1();
+              ElevatedButton(onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                return const SubPage1();
               })), child: const Text('Subページ_2へ'),),
               const Text('BottomButton',style: TextStyle(fontWeight: FontWeight.bold,fontSize:20)),
-              RaisedButton(onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+              ElevatedButton(onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) {
                 return const MyStatefulWidget();
               })), child: const Text('BottomButtonへ')),
               // Container(
@@ -86,6 +88,8 @@ class MainPage extends StatelessWidget {
 }
 
 class SubPage extends StatelessWidget {
+  const SubPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -99,7 +103,7 @@ class SubPage extends StatelessWidget {
           child: Column(
               children: <Widget> [
                 const Text('Sub'),
-                RaisedButton(onPressed: () => Navigator.of(context).pop(), child: const Text('トップへ戻る')),
+                ElevatedButton(onPressed: () => Navigator.of(context).pop(), child: const Text('トップへ戻る')),
               ]
           ),
         ),
@@ -108,6 +112,8 @@ class SubPage extends StatelessWidget {
   }
 }
 class SubPage1 extends StatelessWidget {
+  const SubPage1({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -121,30 +127,28 @@ class SubPage1 extends StatelessWidget {
           child: Column(
               children: <Widget> [
                 const Text('Sub2'),
-                RaisedButton(onPressed: () => Navigator.of(context).pop(), child: new Text('トップへ戻る')),
+                ElevatedButton(onPressed: () => Navigator.of(context).pop(), child: const Text('トップへ戻る')),
                 Column(mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
-                    Container(
-                      child: Row(
-                        children: <Widget>[
-                        Container(
-                          height: 100,
-                          width: 350,
-                          color: Colors.grey.shade200,
-                          margin: const EdgeInsets.fromLTRB(50,20,20,20),
-                          padding: const EdgeInsets.fromLTRB(0, 40, 0, 40),
-                          child: const Text('Grey.shade200',style: TextStyle(color: Colors.black),),
-                        ),
-                        Container(
-                          height: 100,
-                          width: 350,
-                          color: Colors.grey.shade500,
-                          margin: const EdgeInsets.fromLTRB(50,20,20,20),
-                          padding: const EdgeInsets.fromLTRB(0, 40, 0, 40),
-                          child: const Text('Grey.shade500',style: TextStyle(color: Colors.yellow),),
-                        ),
-                          ],
-                        ),
+                    Row(
+                      children: <Widget>[
+                      Container(
+                        height: 100,
+                        width: 350,
+                        color: Colors.grey.shade200,
+                        margin: const EdgeInsets.fromLTRB(50,20,20,20),
+                        padding: const EdgeInsets.fromLTRB(0, 40, 0, 40),
+                        child: const Text('Grey.shade200',style: TextStyle(color: Colors.black),),
+                      ),
+                      Container(
+                        height: 100,
+                        width: 350,
+                        color: Colors.grey.shade500,
+                        margin: const EdgeInsets.fromLTRB(50,20,20,20),
+                        padding: const EdgeInsets.fromLTRB(0, 40, 0, 40),
+                        child: const Text('Grey.shade500',style: TextStyle(color: Colors.yellow),),
+                      ),
+                        ],
                       ),
                     Container(
                       height: 100,
