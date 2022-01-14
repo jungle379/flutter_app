@@ -30,7 +30,7 @@ class MainPage extends StatelessWidget {
         child: Center(
           child: Column(
             children: <Widget>[
-              const Text('Main',style: TextStyle(fontWeight: FontWeight.bold,fontSize:20)),
+              const Text('Main',style: TextStyle(fontWeight: FontWeight.bold,fontSize:20,color: Colors.yellow)),
               ElevatedButton(onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) {
                 return const SubPage();
               })), child: const Text('Subページへ'),),
@@ -38,7 +38,7 @@ class MainPage extends StatelessWidget {
               ElevatedButton(onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) {
                 return const SubPage1();
               })), child: const Text('Subページ_2へ'),),
-              const Text('BottomButton',style: TextStyle(fontWeight: FontWeight.bold,fontSize:20)),
+              const Text('BottomButton',style: TextStyle(fontWeight: FontWeight.bold,fontSize:20,color: Colors.redAccent)),
               ElevatedButton(onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) {
                 return const MyStatefulWidget();
               })), child: const Text('BottomButtonへ')),
