@@ -22,7 +22,7 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Navigator'),
+        title: const Text('Navigator',style: TextStyle(color: Colors.red),),
       ),
       body: Container(
         color: Colors.grey,
@@ -59,7 +59,7 @@ class MainPage extends StatelessWidget {
                     color: Colors.pink,
                     margin: const EdgeInsets.fromLTRB(20,20,20,20),
                     padding: const EdgeInsets.fromLTRB(0, 40, 0, 40),
-                    child: const Text('Container 1',style: TextStyle(color: Colors.black),),
+                    child: const Text('Container 1',style: TextStyle(color: Colors.white),),
                   ),
                   Container(
                     height: 100,
